@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import Category from './Category';
+import Book from './Book';
+import Checkout from './Checkout';
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      Category: ['Romantic', 'Horror', 'Health'],
+      Book: [
+        {
+          BookId: 1,
+          BookName: 'Book Name',
+          BookAuthor: 'Mo Weis',
+          Details: 'lorem ipysm amamsdmasjdaskhdb asbhd badk kjsadkj asd'
+        }
+      ]
+    };
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Category />
+        <Book />
+        <Checkout />
       </div>
     );
   }
