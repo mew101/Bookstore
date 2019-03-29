@@ -21,7 +21,7 @@ namespace BookStore.Repositories
         }
         public IEnumerable<Category> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Categorys.ToList();
         }
 
         public void Create(Category category)
