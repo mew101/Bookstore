@@ -61,7 +61,7 @@ namespace BookStore
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Book}/{action=Index}/{id?}");
+                    template: "{controller=Category}/{action=Index}/{id?}");
             });
         }
     }
