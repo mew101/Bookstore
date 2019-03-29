@@ -11,7 +11,7 @@ namespace BookStore
     public class StoreContext : DbContext
     {
        public DbSet<Category> Categorys { get; set; }
-       public DbSet<Book> Books { get; set; }
+       public DbSet<Book> Book { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

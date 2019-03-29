@@ -9,6 +9,8 @@ namespace BookStore.models
     {
         public int BookId { get; set; }
         public string Author { get; set; }
-        public string ImagePath { get; set; }
+        //public string ImagePath { get; set; }
+        public string DetailDescription { get; set; }
+
     }
 }

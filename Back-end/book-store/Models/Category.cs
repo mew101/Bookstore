@@ -10,7 +10,6 @@ namespace BookStore.Models
     { 
       public int CategoryId { get; set; }
       public string Type { get; set; }
-      public string DetailDescription { get; set; }
 
       public virtual IEnumerable<Book> Books { get; set; }
     }
