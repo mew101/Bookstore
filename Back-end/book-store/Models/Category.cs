@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace book-store.Models
+namespace BookStore.Models
 {
     public class Category
 {

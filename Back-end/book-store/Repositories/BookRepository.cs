@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace book-store.Repositories
+namespace BookStore.Repositories
 {
-    public class BookRepository
+    public class BookRepository : IBookRepository
 {
 }
 }

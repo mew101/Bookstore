@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace book_store.Controllers
+namespace BookStore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
