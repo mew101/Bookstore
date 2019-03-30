@@ -8,7 +8,7 @@ namespace BookStore.Models
     public class Book
     {
         public int BookId { get; set; }
-        public string BookName { get; set; }
+        public string Name { get; set; }
         public string Author { get; set; }
         public string DetailDescription { get; set; }
         public int CategoryId { get; set; }

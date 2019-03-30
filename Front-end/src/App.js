@@ -6,7 +6,7 @@ import Checkout from './Checkout';
 class App extends Component {
   constructor() {
     super();
-    this.state = {      
+    this.state = {
       category: [
         { CategoryId: 1, CategoryName: 'Romantic' },
         { CategoryId: 2, CategoryName: 'Horror' },
@@ -16,7 +16,7 @@ class App extends Component {
         {
           BookId: 1,
           BookName: 'Dostoevsky ',
-          BookAuthor: 'Feodor Dostoevsky',
+          Author: 'Feodor Dostoevsky',
           ImagePath: '',
           Details: 'lorem ipysm amamsdmasjdaskhdb asbhd badk kjsadkj asd'
         },
@@ -25,7 +25,8 @@ class App extends Component {
           BookName: 'How to Sell Houses Fast',
           BookAuthor: 'Mo Weis',
           ImagePath: '',
-          Details: 'lorem ipysm amamsdmasjdaskhdb asbhd badk kjsadkj asd ilianois CHiacago'
+          Details:
+            'lorem ipysm amamsdmasjdaskhdb asbhd badk kjsadkj asd ilianois CHiacago'
         }
       ]
     };
@@ -33,14 +34,21 @@ class App extends Component {
   addBook = book => {
     //const books = { ...this.state.book };
   };
-  addCategory = category =>{
-    //addsCategory 
+  addCategory = category => {
+    //addsCategory
+  };
+  componentDidMount() {
+    fetch('https://localhost:44353/api/Category')
+      .then(res => res.json())
+      .then(json => this.setState({ category: json }));
   }
-  
   render() {
     return (
       <div className="App">
-        <Category addCategory = {this.addCategory} category={this.state.category}/>
+        <Category
+          addCategory={this.addCategory}
+          category={this.state.category}
+        />
         <Book addBook={this.addBook} books={this.state.books} />
         <Checkout />
       </div>
