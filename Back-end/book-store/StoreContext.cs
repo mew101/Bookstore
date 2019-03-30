@@ -1,4 +1,5 @@
-﻿using BookStore.Models;
+﻿using BookStore.models;
+using BookStore.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,12 +10,9 @@ namespace BookStore
 {
     public class StoreContext : DbContext
     {
-       public DbSet<Category> Categories { get; set; }
-       public DbSet<Book> Books { get; set; }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
+       public DbSet<Category> Categorys { get; set; }
+       public DbSet<Book> Book { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb;Database=BookStore;Trusted_Connection=True;";

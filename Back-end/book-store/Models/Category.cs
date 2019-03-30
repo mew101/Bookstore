@@ -1,9 +1,8 @@
-﻿using System;
+﻿using BookStore.models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-using BookStore.Models;
 
 namespace BookStore.Models
 {
