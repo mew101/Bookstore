@@ -11,5 +11,7 @@ namespace BookStore.Repositories
         Category GetById(int id);
         IEnumerable<Category> GetAll();
         void Create(Category category);
+        void Delete(Category category);
+        void Update(Category category);
     }
 }
