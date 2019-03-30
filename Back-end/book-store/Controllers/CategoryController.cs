@@ -12,6 +12,7 @@ namespace BookStore.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
+
         ICategoryRepository repo;
         public CategoryController(ICategoryRepository repo)
         {
@@ -34,23 +35,25 @@ namespace BookStore.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Category category)
         {
-        
+            repo.Create(category);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Category category)
         {
-
+            category = repo.GetById(id);
+            repo.Update(category);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-
+            Category book = repo.GetById(id);
+            repo.Delete(book);
         }
     }
 

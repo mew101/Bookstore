@@ -54,7 +54,7 @@ namespace BookStore.Controllers
         public void Delete(int id)
         {
             Book model = repo.GetById(id);
-            repo.Delete(model);                        
+            repo.Delete(model);
         }
     }
 }

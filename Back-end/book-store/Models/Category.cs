@@ -8,10 +8,10 @@ using BookStore.Models;
 namespace BookStore.Models
 {
     public class Category
-    { 
-      public int CategoryId { get; set; }
-      public string CategoryName { get; set; }
+    {
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
 
-      public virtual IEnumerable<Book> Books { get; set; }
+        public virtual IEnumerable<Book> Books { get; set; }
     }
 }

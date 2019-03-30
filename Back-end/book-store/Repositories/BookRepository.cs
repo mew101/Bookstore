@@ -29,6 +29,7 @@ namespace BookStore.Repositories
         public void Delete(Book book)
         {
             db.Books.Remove(book);
+            db.SaveChanges();
         }    
         public void Update(Book book)
         {

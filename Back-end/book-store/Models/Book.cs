@@ -11,6 +11,6 @@ namespace BookStore.Models
         public string BookName { get; set; }
         public string Author { get; set; }
         public string DetailDescription { get; set; }
-
+        public int CategoryId { get; set; }
     }
 }
