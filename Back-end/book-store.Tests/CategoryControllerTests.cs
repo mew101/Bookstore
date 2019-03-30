@@ -10,7 +10,7 @@ using Xunit;
 using NSubstitute;
 using System.Linq;
 
-namespace book_store.Tests
+namespace BookStore.Tests
 {
   public class CategoryControllerTests
     {

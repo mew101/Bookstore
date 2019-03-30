@@ -17,6 +17,7 @@ namespace BookStore.Controllers
         {
             this.repo = repo;
         }
+
         public ActionResult<IEnumerable<Category>> Get()
         {
             var model = repo.GetAll().ToArray();
@@ -25,27 +26,31 @@ namespace BookStore.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Category> Get(int id)
         {
-            return "value";
+            var model = repo.GetById(id);
+            return model;
         }
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
         {
+        
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
+
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+
         }
     }
 
