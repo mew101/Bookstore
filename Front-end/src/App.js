@@ -8,11 +8,11 @@ class App extends Component {
     super();
     this.state = {
       Category: ['Romantic', 'Horror', 'Health'],
-      Book: [
+      books: [
         {
           BookId: 1,
-          BookName: 'Book Name',
-          BookAuthor: 'Mo Weis',
+          BookName: 'Dostoevsky ',
+          BookAuthor: 'Feodor Dostoevsky',
           Details: 'lorem ipysm amamsdmasjdaskhdb asbhd badk kjsadkj asd'
         }
       ]
@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         <Category />
-        <Book />
+        <Book books={this.state.books} />
         <Checkout />
       </div>
     );
