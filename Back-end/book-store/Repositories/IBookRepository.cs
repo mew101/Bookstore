@@ -1,4 +1,4 @@
-﻿using BookStore.models;
+﻿using BookStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +11,7 @@ namespace BookStore.Repositories
         Book GetById(int id);
         IEnumerable<Book> GetAll();
         void Create(Book book);
+        void Delete(Book book);
+        void Update(Book book);
     }
 }
