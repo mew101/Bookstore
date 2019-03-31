@@ -1,4 +1,5 @@
 .book {
   grid-area: book;
-  background: yellow;
+  background: lightgray;
+  text-align: center;
 }
