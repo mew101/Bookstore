@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import Category from './Category';
-import Book from './Book';
-import Checkout from './Checkout';
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      category: [
-        { CategoryId: 1, CategoryName: 'Romantic' },
-        { CategoryId: 2, CategoryName: 'Horror' },
-        { CategoryId: 3, CategoryName: 'Health' }
-      ],
+      categories: [],
       books: [
         {
           BookId: 1,
@@ -31,28 +25,24 @@ class App extends Component {
       ]
     };
   }
-  addBook = book => {
-    //const books = { ...this.state.book };
-  };
-  addCategory = category => {
-    //addsCategory
-  };
+
   componentDidMount() {
     fetch('https://localhost:44353/api/Category')
       .then(res => res.json())
-      .then(json => this.setState({ category: json }));
+      .then(json => this.setState({ categories: json }));
   }
+  addBook = () => {
+    alert('Adding Book');
+  };
+  addCategory = () => {
+    alert('adding a category');
+  };
+
   render() {
-    return (
-      <div className="App">
-        <Category
-          addCategory={this.addCategory}
-          category={this.state.category}
-        />
-        <Book addBook={this.addBook} books={this.state.books} />
-        <Checkout />
-      </div>
-    );
+    const listOfCategory = this.state.categories.map(item => (
+      <Category books={item.books} categoryname={item.categoryName} />
+    ));
+    return <div className="App">{listOfCategory}</div>;
   }
 }
 

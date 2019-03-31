@@ -19,6 +19,7 @@ namespace BookStore.Controllers
             this.repo = repo;
         }
 
+        [HttpGet]
         public ActionResult<IEnumerable<Category>> Get()
         {
             var model = repo.GetAll().ToArray();
