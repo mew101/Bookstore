@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+
 
 export default class Book extends Component {
   render() {
@@ -6,11 +7,9 @@ export default class Book extends Component {
 
     return (
       <div className="book">
-        <ul key={bookId}>
-          <li>{name}</li>
-          <li>{author}</li>
-          <li>{detailDescription}</li>
-        </ul>
+       <h3>{name}</h3>
+        <p>{author}</p>
+        <p>{detailDescription}</p>
       </div>
     );
   }
