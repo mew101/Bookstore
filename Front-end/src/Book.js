@@ -11,6 +11,9 @@ export default class Book extends Component {
         <li>{book.Details}</li>
       </ul>
     ));
-    return <div className="book">{BookList}</div>;
+    return <div className="book">
+    <h1>Book List</h1>
+    {BookList}
+    </div>;
   }
 }

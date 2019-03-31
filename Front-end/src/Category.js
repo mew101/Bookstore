@@ -10,7 +10,7 @@ export default class Category extends Component {
     ));
     return (
       <div className="category">
-        <h1>{categoryOptions}</h1>
+        <h1>Book Category</h1>
       </div>
     );
   }
