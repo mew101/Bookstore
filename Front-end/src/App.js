@@ -8,20 +8,18 @@ class App extends Component {
     super();
     this.state = {
       category: [
-        { CategoryId: 1, CategoryName: 'Romantic' },
-        { CategoryId: 2, CategoryName: 'Horror' },
-        { CategoryId: 3, CategoryName: 'Health' }
+        { CategoryName: 'Romantic' },
+        { CategoryName: 'Horror' },
+        { CategoryName: 'Health' }
       ],
       books: [
-        {
-          BookId: 1,
+        {        
           BookName: 'Dostoevsky ',
           Author: 'Feodor Dostoevsky',
           ImagePath: '',
           Details: 'lorem ipysm amamsdmasjdaskhdb asbhd badk kjsadkj asd'
         },
-        {
-          BookId: 2,
+        {        
           BookName: 'How to Sell Houses Fast',
           BookAuthor: 'Mo Weis',
           ImagePath: '',
@@ -31,6 +29,9 @@ class App extends Component {
       ]
     };
   }
+  setName = newName => {
+    this.setState({ categoryName: newName });
+  };
   addBook = book => {
     //const books = { ...this.state.book };
   };
@@ -43,6 +44,7 @@ class App extends Component {
       .then(json => this.setState({ category: json }));
   }
   render() {
+   
     return (
       <div className="App">
         <Category
