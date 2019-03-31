@@ -1,28 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import Category from './Category';
+import Book from './Book';
 class App extends Component {
   constructor() {
     super();
     this.state = {
       categories: [],
-      books: [
-        {
-          BookId: 1,
-          BookName: 'Dostoevsky ',
-          Author: 'Feodor Dostoevsky',
-          ImagePath: '',
-          Details: 'lorem ipysm amamsdmasjdaskhdb asbhd badk kjsadkj asd'
-        },
-        {
-          BookId: 2,
-          BookName: 'How to Sell Houses Fast',
-          BookAuthor: 'Mo Weis',
-          ImagePath: '',
-          Details:
-            'lorem ipysm amamsdmasjdaskhdb asbhd badk kjsadkj asd ilianois CHiacago'
-        }
-      ]
+      books: [] , 
+      name: "",
+      author: "",
+      detailDescription: "", 
     };
   }
 
@@ -31,19 +19,62 @@ class App extends Component {
       .then(res => res.json())
       .then(json => this.setState({ categories: json }));
   }
-  addBook = () => {
-    alert('Adding Book');
-  };
-  addCategory = () => {
-    alert('adding a category');
+  // 
+   setName = text => {
+    this.setState({ name: text });
   };
 
+   setAuthor = text => {
+    this.setState({ author: text });
+  };
+
+  setdetailDescription = text => {
+    this.setState({ detailDescription: text });
+  };
+
+  
+  addBook = () => {
+    const book = {
+      maker: this.state.name,
+      model: this.state.author,
+      type: this.state.detailDescription
+    };
+    fetch("https://localhost:44384/api/pedal", {
+      method: "POST",
+      body: JSON.stringify(book),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+     .then(res => {
+        if (res.ok) {
+          const newBookList = [...this.state.allBooks, book];
+          this.setState({ allBooks: newBookList });
+        }
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
   render() {
-    const listOfCategory = this.state.categories.map(item => (
-      <Category books={item.books} categoryname={item.categoryName} />
+     return(
+     
+    const categoryList =this.state.categories.map(categories =>(
+            <Book
+              name={this.state.name}
+              author={this.state.author}
+              detailDescription={this.state.detailDescription}
+              setName={this.setName}
+              setAuthor={this.setAuthor}
+              setdetailDescription={this.setdetailDescription}
+              addBook={this.addBook}
+            />
+    )
     ));
-    return <div className="App">{listOfCategory}</div>;
-  }
+   
+  
+   
+// }  <div className="App">{listOfCategory}</div>;
 }
 
 export default App;

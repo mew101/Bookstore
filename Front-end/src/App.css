@@ -1,6 +1,12 @@
 .App {
-  display: grid;
-  grid-template-areas: 'category book checkout';
-  grid-template-columns: 35vw 35vw 20vw;
-  margin: 10vw 10vh;
+   display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 1.5fr 2fr 1.5fr;
+  grid-template-rows: 3fr 1fr;
+  grid-template-areas:
+    "a b c"
+    "a b c";
+  margin: auto;
+  grid-gap: 1em;
 }
