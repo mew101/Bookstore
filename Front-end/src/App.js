@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Category from './Category';
+import Category from './Category';
 import Book from './Book';
 class App extends Component {
   constructor() {

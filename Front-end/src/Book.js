@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './Book.css';
 
-export default class Book extends Component {
+class Book extends Component {
    setName = event => {
-    this.props.setname(event.target.value);
+    this.props.setname(event.target.text);
   };
   setAuthor = event => {
-    this.props.setAuthor(event.target.value);
+    this.props.setAuthor(event.target.text);
   };
   setDescription = event => {
-    this.props.setDescription(event.target.value);
+    this.props.setDescription(event.target.text);
   };
   render() {
     const { name,  author, detailDescription } = this.props;
@@ -40,3 +40,4 @@ export default class Book extends Component {
   //   );
   // }
 }
+export default Book;
