@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Category from './Category';
+// import Category from './Category';
 import Book from './Book';
 class App extends Component {
   constructor() {
@@ -59,7 +59,7 @@ class App extends Component {
   render() {
      return(
      
-    const categoryList =this.state.categories.map(categories =>(
+    // const bookList =this.state.books.map(categories =>(
             <Book
               name={this.state.name}
               author={this.state.author}
@@ -69,10 +69,10 @@ class App extends Component {
               setdetailDescription={this.setdetailDescription}
               addBook={this.addBook}
             />
-    )
-    ));
+    
+    );
    
-  
+  }
    
 // }  <div className="App">{listOfCategory}</div>;
 }

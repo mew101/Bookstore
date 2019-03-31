@@ -26,7 +26,7 @@ export default class Book extends Component {
           <input type="text" value={detailDescription} onChange={this.setDescription} />
         </label>
         <br />
-        <button onClick={addBook}>Add</button>
+        {/* <button onClick={addBook}>Add</button> */}
       </div>
     );
   }
