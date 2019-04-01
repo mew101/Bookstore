@@ -35,18 +35,18 @@ export default class Category extends Component {
           className={this.props.categoryId}
           value={name}
           type="text"
-          onClick={this.onBookName}
+          onChange={this.onBookName}
         />
         <input
           className={this.props.categoryId}
           value={author}
           type="text"
-          onClick={this.onAuthor}
+          onChange={this.onAuthor}
         />
         <input
           value={detailDescription}
           type="text"
-          onClick={this.ondetailDescription}
+          onChange={this.ondetailDescription}
         />
         <button onClick={this.saveBook}>Add Book</button>
       </div>
