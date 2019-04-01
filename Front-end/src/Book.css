@@ -1,5 +1,7 @@
 .book {
-  grid-area: book;
+  
   background: lightgray;
   text-align: center;
+  list-style-type: none;
+
 }
