@@ -1,7 +1,12 @@
 .book {
   
-  background: lightgray;
+  background-color: lightgray;
+  
+  grid-area: b;
   text-align: center;
   list-style-type: none;
 
+}
+button{
+  color: red;
 }
