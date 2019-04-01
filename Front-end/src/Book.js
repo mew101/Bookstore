@@ -5,10 +5,18 @@ export default class Book extends Component {
   deleteBook = () => {
     fetch(`https://localhost:44353/api/Book/${this.props.bookId}`, {
       method: 'DELETE'
-    });
+    })
+      .then(res => {
+        if (res.ok) {
+          console.log('Deleting  Book');
+        }
+      })
+      .catch(err => {
+        console.error(err);
+      });
   };
   render() {
-    const { bookId, name, detailDescription, author } = this.props;
+    const { name, detailDescription, author } = this.props;
 
     return (
       <div className="book">
