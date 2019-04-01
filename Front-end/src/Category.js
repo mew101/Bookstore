@@ -1,17 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Book from "./Book";
 import './Category.css';
-export default class Category extends Component {
-  render() {
-    const { category } = this.props;
-    const categoryOptions = category.map(category => (
-      <ul key={category.categoryId}>
-        <li>{category.CategoryName}</li>
-      </ul>
-    ));
-    return (
+
+ 
+    export default class Category extends Component {
+      render() {
+        const { books, categoryname } = this.props;
+        const listOfBooks = books.map(book => (
+          <li key={book.bookId}>
+          <Book
+            bookId={book.bookId}
+            name={book.name}
+            author={book.author}
+            detailDescription={book.detailDescription}
+          />
+        </li>
+      ));
+      return (
       <div className="category">
-        <h1>Book Category</h1>
+         <h2>{categoryname}</h2>
+        <ul>{listOfBooks}</ul>
       </div>
     );
-  }
+   }
 }
