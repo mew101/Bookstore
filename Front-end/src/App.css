@@ -2,12 +2,9 @@
   display: grid;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: 1.5fr 2fr 1.5fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    "a b"
-    "a b"
-    "a b";
+  grid-template-columns: 1fr 1fr 1fr;
+
   margin: auto;
-  grid-gap: 1em;
+  grid-gap: .5em;
+  list-style: none;
 }
